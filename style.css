@@ -1,0 +1,44 @@
+/* Riot */
+
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Neue';
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #f1f1f1; */
+    background-color: rgba(0, 0, 0, 0.925);
+    text-align: center;
+}
+
+#main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+h3 {
+    /* font-weight: 900; */
+    font-size: 20vh;
+    color: #f1f1f1;
+}
+
+/* Riot */
