@@ -26,13 +26,12 @@ body {
 }
 
 #space {
-    width: 100vw;
+    width: 100%;
     height: 1vh;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 #main {
-    /* width: 100vw; */
-    /* height: 90vh; */
     position: relative;
     background-color: rgba(0, 0, 0, 0);
 }
@@ -40,19 +39,25 @@ body {
 #nav {
     width: 100vw;
     height: 5vh;
-    background-color: #fff;
+    background-color: rgba(241, 241, 241, 0);
     align-items: center;
     justify-content: center;
     display: flex;
+    z-index: 99;
+    position: fixed;
+    /* gap: 45px; */
+    /* padding: 0 100px; */
 }
 
 #page1 {
-    width: 100%;
-    min-height: 90vh;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0);
+    position: relative;
+    background-color: rgba(196, 26, 26, 0);
+    /* background-color: rgba(0, 0, 0, 0); */
     text-align: center;
 }
