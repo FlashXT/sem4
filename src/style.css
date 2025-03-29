@@ -9,10 +9,19 @@
     font-family: 'Comic Neue';
 }
 
+:root {
+    -webkit-tap-highlight-color: #0000;
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+}
+
 html,
 body {
     height: 100%;
     width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 #space {
@@ -21,8 +30,10 @@ body {
 }
 
 #main {
+    width: 100vw;
+    height: 90vh;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.4);
+    /* background-color: rgba(170, 20, 20, 0.4); */
 }
 
 #page1 {
@@ -34,15 +45,8 @@ body {
     flex-direction: column;
 }
 
-.button {
-    background-color: #ff0000;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+.report {
+    text-decoration: none;
 }
 
 /* Riot */

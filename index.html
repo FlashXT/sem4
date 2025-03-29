@@ -3,12 +3,9 @@
 <html lang="en">
 
 <head>
-    <title>Samarth</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="src/style.css">
-    <link rel="shortcut icon" href="src/favicon.ico" type="image/x-icon">
     <meta name="description" content="Sαмαятн Website | Web Development project.">
     <meta itemprop="name" content="Sem 4 MateriaL">
     <meta itemprop="description" content="Sαмαятн Website | Web Development project.">
@@ -18,6 +15,9 @@
     <meta content="Sem 4 MateriaL" property="og:title">
     <meta content="src/meta.jpg" property="og:image">
     <meta content="Sαмαятн Website | Web Development project." property="og:description">
+    <title>Samarth</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="shortcut icon" href="src/favicon.ico" type="image/x-icon">
 </head>
 
 <body oncontextmenu="return false">
@@ -79,13 +79,33 @@
             <h2> ~ Updated at ? ~ </h2>
             <h3>
                 ~ Report
-                <a href="https://riotoreo.t.me" target="_blank">he</a><a href="https://t.me/riotoreo" target="_blank">re</a>
+                <a class="report" href="https://riotoreo.t.me" target="_blank">he</a><a class="report"
+                    href="https://t.me/riotoreo" target="_blank">re</a>
                 if error
                 found. ~
             </h3>
             <h2></h2>
         </div>
     </div>
+    <script>
+        document.onkeydown = function (e) {
+            if (event.keyCode == 123) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false;
+            }
+        }
+    </script>
     <script src="src/app.js"></script>
 </body>
 
