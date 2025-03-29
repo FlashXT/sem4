@@ -31,15 +31,24 @@ body {
 }
 
 #main {
-    width: 100vw;
-    height: 90vh;
+    /* width: 100vw; */
+    /* height: 90vh; */
     position: relative;
     background-color: rgba(0, 0, 0, 0);
 }
 
+#nav {
+    width: 100vw;
+    height: 5vh;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
 #page1 {
     width: 100%;
-    height: 90vh;
+    min-height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
