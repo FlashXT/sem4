@@ -107,11 +107,13 @@ void optimalPage(int ref_str[], int refStrLen, int frame_items[], int max_frames
 
 int main()
 {
+    cout << "\n";
     int ref_str[] = {7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2, 1};
     int refStrLen = sizeof(ref_str) / sizeof(ref_str[0]);
     int max_frames = 3;
     int frame_items[max_frames];
 
     optimalPage(ref_str, refStrLen, frame_items, max_frames);
+    cout << "\n";
     return 0;
 }

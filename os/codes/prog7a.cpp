@@ -54,5 +54,7 @@ int main()
     }
     cout << "\n\nTotal Page Faults:\t" << pageFaults;
     cout << "\nTotal Hits :\t" << (pages - pageFaults);
+    cout << "\n\n";
     return 0;
 }
+// oreo

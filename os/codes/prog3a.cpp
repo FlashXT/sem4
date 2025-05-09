@@ -92,10 +92,10 @@ void findavgTime(int processes[], int n, int bt[], int quantum)
     findTurnAroundTime(processes, n, bt, wt, tat);
 
     // Display processes along with all details
-    cout << "PN\t "
-         << " \tBT "
-         << "  WT "
-         << " \tTAT\n";
+    cout << "PN\t"
+         << "BT"
+         << "\t WT"
+         << " \t TAT\n";
 
     // Calculate total waiting time and total turn
     // around time
@@ -103,7 +103,7 @@ void findavgTime(int processes[], int n, int bt[], int quantum)
     {
         total_wt = total_wt + wt[i];
         total_tat = total_tat + tat[i];
-        cout << " " << i + 1 << "\t\t" << bt[i] << "\t " << wt[i] << "\t\t " << tat[i] << endl;
+        cout << " " << i + 1 << "\t" << bt[i] << "\t " << wt[i] << "\t " << tat[i] << endl;
     }
 
     cout << "Average waiting time = " << (float)total_wt / (float)n;
@@ -113,6 +113,7 @@ void findavgTime(int processes[], int n, int bt[], int quantum)
 // Driver code
 int main()
 {
+    cout << endl;
     // process id's
     int processes[] = {1, 2, 3};
     int n = sizeof processes / sizeof processes[0];
@@ -123,5 +124,7 @@ int main()
     // Time quantum
     int quantum = 2;
     findavgTime(processes, n, burst_time, quantum);
+    cout << endl
+         << endl;
     return 0;
 }

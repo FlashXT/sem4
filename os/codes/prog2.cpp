@@ -22,25 +22,39 @@ bool compareBurstTime(const Process &a, const Process &b)
 
 void sjfNonPreemptive(vector<Process> &processes)
 {
-    sort(processes.begin(), processes.end(), compareBurstTime);
+    sort(processes.begin(), processes.end(), compareArrivalTime);
     int n = processes.size();
     int total_waiting_time = 0;
     int total_turnaround_time = 0;
     vector<int> completion_time(n);
     vector<int> waiting_time(n);
     vector<int> turnaround_time(n);
-    completion_time[0] = processes[0].burst_time;
-    turnaround_time[0] = completion_time[0] - processes[0].arrival_time;
-    waiting_time[0] = turnaround_time[0] - processes[0].burst_time;
-    total_waiting_time += waiting_time[0];
-    total_turnaround_time += turnaround_time[0];
-    for (int i = 1; i < n; i++)
+    int current_time = 0;
+    for (int i = 0; i < n; i++)
     {
-        completion_time[i] = completion_time[i - 1] + processes[i].burst_time;
-        turnaround_time[i] = completion_time[i] - processes[i].arrival_time;
-        waiting_time[i] = turnaround_time[i] - processes[i].burst_time;
-        total_waiting_time += waiting_time[i];
-        total_turnaround_time += turnaround_time[i];
+        int idx = -1;
+        for (int j = 0; j < n; j++)
+        {
+            if (processes[j].arrival_time <= current_time && completion_time[j] == 0)
+            {
+                if (idx == -1 || processes[j].burst_time < processes[idx].burst_time)
+                {
+                    idx = j;
+                }
+            }
+        }
+        if (idx == -1)
+        {
+            current_time++;
+            i--;
+            continue;
+        }
+        current_time += processes[idx].burst_time;
+        completion_time[idx] = current_time;
+        turnaround_time[idx] = completion_time[idx] - processes[idx].arrival_time;
+        waiting_time[idx] = turnaround_time[idx] - processes[idx].burst_time;
+        total_waiting_time += waiting_time[idx];
+        total_turnaround_time += turnaround_time[idx];
     }
     double avg_waiting_time = (double)total_waiting_time / n;
     double avg_turnaround_time = (double)total_turnaround_time / n;
@@ -76,15 +90,18 @@ void sjfPreemptive(vector<Process> &processes)
     }
     while (completed != n)
     {
-        int shortest = n;
+        int shortest = -1; // Initialize to -1 to indicate no process selected
         for (int i = 0; i < n; i++)
         {
-            if (processes[i].arrival_time <= current_time && remaining_time[i] < remaining_time[shortest] && remaining_time[i] > 0)
+            if (processes[i].arrival_time <= current_time && remaining_time[i] > 0)
             {
-                shortest = i;
+                if (shortest == -1 || remaining_time[i] < remaining_time[shortest])
+                {
+                    shortest = i;
+                }
             }
         }
-        if (shortest == n)
+        if (shortest == -1) // No process is ready to execute
         {
             current_time++;
             continue;
@@ -93,10 +110,8 @@ void sjfPreemptive(vector<Process> &processes)
         if (remaining_time[shortest] == 0)
         {
             completed++;
-            turnaround_time[shortest] = current_time + 1 -
-                                        processes[shortest].arrival_time;
-            waiting_time[shortest] = turnaround_time[shortest] -
-                                     processes[shortest].burst_time;
+            turnaround_time[shortest] = current_time + 1 - processes[shortest].arrival_time;
+            waiting_time[shortest] = turnaround_time[shortest] - processes[shortest].burst_time;
             total_waiting_time += waiting_time[shortest];
             total_turnaround_time += turnaround_time[shortest];
         }
@@ -105,8 +120,7 @@ void sjfPreemptive(vector<Process> &processes)
     double avg_waiting_time = (double)total_waiting_time / n;
     double avg_turnaround_time = (double)total_turnaround_time / n;
     cout << "SJF (Preemptive) Scheduling:" << endl;
-
-    cout << "Process ID\tArrival Time\tBurst Time\tWaiting Time\tTurnaround Time";
+    cout << "Process ID\tArrival Time\tBurst Time\tWaiting Time\tTurnaround Time\n";
     for (int i = 0; i < n; i++)
     {
         cout << processes[i].pid << "\t\t"
@@ -125,11 +139,11 @@ int main()
     cout << "Enter the number of processes: ";
     cin >> n;
     vector<Process> processes(n);
-    cout << "Enter arrival time and burst time for each process:" << endl;
+    cout << "Enter arrival time and burst time for each process: " << endl;
     for (int i = 0; i < n; i++)
     {
         processes[i].pid = i + 1;
-        cout << "Process " << i + 1 << ":" << endl;
+        cout << "Process " << i + 1 << ": " << endl;
         cout << "Arrival Time: ";
         cin >> processes[i].arrival_time;
         cout << "Burst Time: ";

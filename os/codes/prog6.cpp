@@ -11,7 +11,7 @@ int main()
     int choice;
     do
     {
-        cout << "\nThis is the program for performing different menory allocation strategies:" << endl;
+        cout << "\n\nThis is the program for performing different memory allocation strategies:" << endl;
         cout << "1. First fit\n2. Best fit\n3. Worst fit" << endl;
         cout << "0. exit" << endl;
         cout << "Please enter your choice: ";
@@ -52,7 +52,9 @@ void first()
     cin >> bno;
     cout << "\nEnter size of each block: ";
     for (i = 0; i < bno; i++)
+    {
         cin >> bsize[i];
+    }
     cout << "\nEnter no. of processes: ";
     cin >> pno;
     cout << "\nEnter size of each process: ";
@@ -87,6 +89,7 @@ void first()
             cout << "Not allocated";
         }
     }
+    cout << "\n";
 }
 
 void best()
@@ -94,21 +97,21 @@ void best()
     int fragment[20], b[20], p[20], i, j, nb, np, temp, lowest = 9999;
     static int barray[20], parray[20];
     cout << "\n\t\t\tMemory Management Scheme - Best Fit";
-    cout << "\nEnter the number of blocks:";
+    cout << "\nEnter the number of blocks: ";
     cin >> nb;
-    cout << "Enter the number of processes:";
+    cout << "Enter the number of processes: ";
     cin >> np;
-    cout << "\nEnter the size of the blocks:-\n";
+    cout << "\nEnter the size of the blocks-\n";
     for (i = 1; i <= nb; i++)
     {
-        cout << "Block no." << i << ":";
+        cout << "Block no." << i << " : ";
         cin >> b[i];
     }
-    cout << "\nEnter the size of the processes :-\n";
+    cout << "\nEnter the size of the processes -\n";
     for (i = 1; i <= np; i++)
 
     {
-        cout << "Process no. " << i << ":";
+        cout << "Process no. " << i << " : ";
         cin >> p[i];
     }
     for (i = 1; i <= np; i++)
@@ -150,10 +153,14 @@ void worst()
     cin >> nProcess;
     cout << " Enter the size of " << nBlocks << " blocks: ";
     for (int i = 0; i < nBlocks; i++)
+    {
         cin >> blockSize[i];
+    }
     cout << " Enter the size of " << nProcess << " processes: ";
     for (int i = 0; i < nProcess; i++)
+    {
         cin >> processSize[i];
+    }
     for (int i = 0; i < nProcess; i++)
     {
         int max = blockSize[0];
@@ -176,3 +183,4 @@ void worst()
         }
     }
 }
+// oreo

@@ -18,8 +18,9 @@ public:
 // main function
 int main()
 {
+    // cout << endl;
     int n;
-    cout << "\nEnter the no of processes in your system:\n";
+    cout << "\nEnter the no of processes in your system: ";
     cin >> n;
     Process *p = new Process[n];
     Process f;
@@ -27,16 +28,18 @@ int main()
     f.sort(p, n);
     f.calc(p, n);
     f.show(p, n);
+    cout << "\n\n";
     return 0;
 }
+
 // taking input arrival and burst times for all processes
 void Process::input(Process *p, int n)
 {
     for (int i = 0; i < n; i++)
     {
-        cout << "\nEnter pival time for process " << i + 1 << ":\n";
+        cout << "\nEnter pival time for process " << i + 1 << ": ";
         cin >> p[i].at;
-        cout << "\nEnter burst time for process " << i + 1 << ":\n";
+        cout << "\nEnter burst time for process " << i + 1 << ": ";
         cin >> p[i].bt;
         p[i].id = i + 1;
     }

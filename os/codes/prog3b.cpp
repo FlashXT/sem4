@@ -164,7 +164,7 @@ int main()
     for (int i = 0; i < n; i++)
     {
         cout << i + 1 << "\t\t" << arrival[i] << "\t\t"
-             << burst[i] << "\t\t" << wait[i] << "\t\t" << turn[i] << endl;
+             << burst[i] << "\t\t" << wait[i] << "\t\t\t" << turn[i] << endl;
     }
     for (int i = 0; i < n; i++)
     {
@@ -172,7 +172,7 @@ int main()
         avgTT += turn[i];
     }
     cout << "\nAverage wait time : " << (avgWait / n)
-         << "\nAverage Turn Around Time : " << (avgTT / n);
+         << "\nAverage Turn Around Time : " << (avgTT / n) << "\n\n";
 
     return 0;
 }
