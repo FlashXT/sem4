@@ -1,4 +1,6 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
+
 int arr[20];
 int merge(int arr[], int l, int m, int h);
 int merge_sort(int arr[], int low, int high);
@@ -6,18 +8,19 @@ int merge_sort(int arr[], int low, int high);
 int main()
 {
     int n, i;
-
-    printf("Enter the size of array: ");
-    scanf("%d", &n);
-    printf("Enter the elements:\n");
+    cout << "Enter the size of array: ";
+    cin >> n;
+    cout << "Enter the elements:\n";
     for (i = 0; i < n; i++)
-        scanf("%d", &arr[i]);
-
+    {
+        cin >> arr[i];
+    }
     merge_sort(arr, 0, n - 1);
-
-    printf("Sorted array:\n");
+    cout << "Sorted array:\n";
     for (i = 0; i < n; i++)
-        printf("%d  ", arr[i]);
+    {
+        cout << arr[i] << " ";
+    }
     return 0;
 }
 
@@ -31,7 +34,6 @@ int merge_sort(int arr[], int low, int high)
         merge_sort(arr, mid + 1, high);
         merge(arr, low, mid, high);
     }
-
     return 0;
 }
 
@@ -43,9 +45,13 @@ int merge(int arr[], int l, int m, int h)
     n2 = h - m;
 
     for (i = 0; i < n1; i++)
+    {
         arr1[i] = arr[l + i];
+    }
     for (j = 0; j < n2; j++)
+    {
         arr2[j] = arr[m + j + 1];
+    }
 
     arr1[i] = 9999;
     arr2[j] = 9999;
@@ -55,9 +61,12 @@ int merge(int arr[], int l, int m, int h)
     for (k = l; k <= h; k++)
     {
         if (arr1[i] <= arr2[j])
+        {
             arr[k] = arr1[i++];
+        }
         else
+        {
             arr[k] = arr2[j++];
+        }
     }
-    return 0;
 }
