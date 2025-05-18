@@ -1,4 +1,4 @@
-// C++ program to illustrate the thread synchronization using mutex
+// C++ program to Illustrate the thread synchronization using mutex
 
 #include <iostream>
 #include <thread>
