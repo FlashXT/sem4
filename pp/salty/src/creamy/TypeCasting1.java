@@ -2,7 +2,7 @@
 
 package creamy;
 
-public class TypeCasting {
+public class TypeCasting1 {
     public static void main(String[] args) {
         int myInt = 9;
         double myDouble = myInt;
