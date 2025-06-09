@@ -46,4 +46,20 @@
 
 <br>
 
+9. [implement LRU algorithm.](https://github.com/FlashXT/sem4/blob/main/os/codes/prog9.cpp)
+
+<br>
+
+10. [implement C-look disk scheduling.](https://github.com/FlashXT/sem4/blob/main/os/codes/prog10.cpp)
+
+<br>
+
+11. [implement Look disk scheduling.Program.](https://github.com/FlashXT/sem4/blob/main/os/codes/prog11.cpp)
+
+<br>
+
+12. [implement SCAN disk scheduling.Program.](https://github.com/FlashXT/sem4/blob/main/os/codes/prog12.cpp)
+
+<br>
+
 ### end
