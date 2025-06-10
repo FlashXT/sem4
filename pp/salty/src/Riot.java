@@ -3,6 +3,6 @@
 
 public class Riot {
     public static void main(String[] args) {
-        System.out.println("Hello, Riot");
+        System.out.println("\nHello, Riot\n");
     }
 }

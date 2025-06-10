@@ -4,6 +4,7 @@ package creamy;
 
 public class Variables {
     public static void main(String[] args) {
+        System.out.println();
         int myNum = 5;
         float myFloatNum = 5.99f;
         char myLetter = 'D';
@@ -14,5 +15,6 @@ public class Variables {
         System.out.println("Character: " + myLetter);
         System.out.println("Boolean: " + myBool);
         System.out.println("String: " + myText);
+        System.out.println();
     }
 }

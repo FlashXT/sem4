@@ -2,6 +2,7 @@ package creamy;
 
 public class Switch {
     public static void main(String[] args) {
+        System.out.println();
         int month = 8;
         String monthString = "";
         switch (month) {
@@ -46,5 +47,6 @@ public class Switch {
                 break;
         }
         System.out.println(monthString);
+        System.out.println();
     }
 }
