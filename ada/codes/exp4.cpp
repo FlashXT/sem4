@@ -69,4 +69,5 @@ int merge(int arr[], int l, int m, int h)
             arr[k] = arr2[j++];
         }
     }
+    return 0;
 }
