@@ -19,6 +19,7 @@ int fib(int n)
 
 int main()
 {
+    cout << endl;
     int n;
     cout << "Enter a number of terms: ";
     cin >> n;
@@ -27,6 +28,7 @@ int main()
     {
         cout << fib(i) << " ";
     }
-    cout << endl;
+    cout << endl
+         << endl;
     return 0;
 }

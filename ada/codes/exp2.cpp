@@ -11,9 +11,11 @@ int fact(int n)
 
 int main()
 {
+    cout<<endl;
     int n;
     cout << "Enter a number: ";
     cin >> n;
     cout << "Factorial of " << n << " is : " << fact(n) << endl;
+    cout<<endl;
     return 0;
 }

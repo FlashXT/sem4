@@ -8,7 +8,7 @@ int merge_sort(int arr[], int low, int high);
 int main()
 {
     int n, i;
-    cout << "Enter the size of array: ";
+    cout << "\nEnter the size of array: ";
     cin >> n;
     cout << "Enter the elements:\n";
     for (i = 0; i < n; i++)
@@ -21,6 +21,8 @@ int main()
     {
         cout << arr[i] << " ";
     }
+    cout << endl
+         << endl;
     return 0;
 }
 
